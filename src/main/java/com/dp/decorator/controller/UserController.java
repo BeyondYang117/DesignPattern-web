@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * 描述: springboot 中使用装饰者模式来给任何一个service添加日志功能，才利用依额注入来动态地选择被装饰的对象
+ * 描述: spring 中使用装饰者模式来给任何一个service添加日志功能，才利用依额注入来动态地选择被装饰的对象
  * UserController，它处理用户相关的请求
  *
  * @date 2023/9/17 21:09
- * @author caozp
+ * @author abu
  */
 @RestController
 @RequestMapping("/user")
@@ -27,7 +27,7 @@ public class UserController {
      * 描述: 处理获取用户的请求
      * 默认：userService, 增加日志：logUserService, 增加权限：authUserService， 增加日志和权限：logAndAuthUser
      * @date 2023/9/17 21:12
-     * @author caozp
+     * @author abu
      * @param id
      * @param decorator
      * @return java.lang.String

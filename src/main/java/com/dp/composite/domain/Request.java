@@ -7,23 +7,23 @@ import java.util.List;
 @Data
 public class Request {
 
-    private List<String> requiredRoles;
-
-    private String method;
 
     private String url;
 
+    private String method;
+
     private List<String> requiredResources;
 
+    private List<String> requiredRoles;
 
     public Request() {
 
     }
 
     public Request(String url, String method, List<String> requiredResources, List<String> requiredRoles) {
-        this.requiredRoles = requiredRoles;
+        this.url = url;
         this.method = method;
         this.requiredResources = requiredResources;
-        this.url = url;
+        this.requiredRoles = requiredRoles;
     }
 }

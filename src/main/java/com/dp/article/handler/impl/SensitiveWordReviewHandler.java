@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Slf4j
-@Component
-public class SensitiveWordReviewHandler implements ReviewHandler {
+@Component("SENSITIVE")
+class SensitiveWordReviewHandler implements ReviewHandler {
 
     @Autowired
     private ImageReviewHandler imageReviewHandler;
@@ -23,10 +23,10 @@ public class SensitiveWordReviewHandler implements ReviewHandler {
 
         if (containsSensitiveWord) {
             log.debug("文章包含敏感词");
-            return Result.fail("文章包含敏感英文");
+            return new Result(false, "文章包含敏感英文");
         }
         log.debug("文章不包含敏感词");
-        return imageReviewHandler.review(article);
+        return new Result(true);
     }
 
     public boolean check(String content) {

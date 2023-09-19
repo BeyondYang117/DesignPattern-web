@@ -8,8 +8,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 @Slf4j
-@Component
-public class ImageReviewHandler implements ReviewHandler {
+@Component("IMAGE")
+class ImageReviewHandler implements ReviewHandler {
     @Override
     public Result review(Article article) {
 
@@ -17,8 +17,7 @@ public class ImageReviewHandler implements ReviewHandler {
 
         boolean containsInappropriateImage = check(article.getContent());
         if (containsInappropriateImage) {
-            log.debug("文章中的图片违规");
-            return Result.fail("文章中的图片违规！");
+            return new Result(false,"文章中的图片违规！");
         } else {
             // 继续审栯后续
             // 所有审核通过
@@ -29,8 +28,7 @@ public class ImageReviewHandler implements ReviewHandler {
 
 
     public boolean check(String content) {
-        System.out.println("已抽取文章中的图片链接。。。。");
-        System.out.println("检查图片.....");
-        return false;
+        System.out.println("已抽取文章中的图片链接检查图片。。。。");
+        return true;
     }
 }

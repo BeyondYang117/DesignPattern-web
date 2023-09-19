@@ -5,13 +5,11 @@ import com.dp.article.handler.ReviewHandler;
 import com.dp.article.util.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Slf4j
-@Primary
-@Component
-public class BaseReviewHandler implements ReviewHandler {
+@Component("BASE")
+class BaseReviewHandler implements ReviewHandler {
 
     @Autowired
     private SensitiveWordReviewHandler sensitiveWordReviewHandler;
@@ -22,10 +20,10 @@ public class BaseReviewHandler implements ReviewHandler {
         int wordCount = article.getContent().split("\\s+").length;
         if (wordCount <= 100) {
             log.debug("基础审核通过");
-            return sensitiveWordReviewHandler.review(article);
+            return new Result(true);
         } else {
             log.debug("基础审核未通过");
-            return Result.fail("文章字数不超过100");
+            return new Result(false,"文章字数不超过100");
         }
     }
 }

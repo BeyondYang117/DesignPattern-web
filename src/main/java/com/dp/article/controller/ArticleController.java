@@ -25,6 +25,12 @@ public class ArticleController {
     @Autowired
     private ReviewArticleService reviewArticleService;
 
+    /**
+     * approve: false
+     * reViewers: SENSITIVE,IMAGE,BASE
+     * @param article
+     * @return
+     */
     @PostMapping("/review")
     public ResponseEntity<String> reviewArticle (@RequestBody Article article) {
 

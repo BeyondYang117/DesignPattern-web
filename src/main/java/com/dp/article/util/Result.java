@@ -18,8 +18,4 @@ public class Result {
         this.isApproved = isApproved;
         this.msg = "审核通过";
     }
-
-    public static Result fail(String msg) {
-        return new Result(false, msg);
-    }
 }

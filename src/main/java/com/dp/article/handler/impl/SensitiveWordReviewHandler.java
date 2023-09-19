@@ -30,7 +30,7 @@ class SensitiveWordReviewHandler implements ReviewHandler {
     }
 
     public boolean check(String content) {
-        System.out.println("检查敏感词。。。。");
-        return true;
+        System.out.println("检查敏感词....");
+        return false;
     }
 }

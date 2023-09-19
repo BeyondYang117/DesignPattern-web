@@ -36,9 +36,9 @@ public class ArticleController {
 
         Result result = reviewArticleService.reviewArticle(article);
         if (result.isApproved()) {
-            return ResponseEntity.ok("文章通过审栯后台！");
+            return ResponseEntity.ok("文章通过审核！");
         } else {
-            return ResponseEntity.ok("文章校验未通过！"+ result.getMsg());
+            return ResponseEntity.ok("文章审核未通过！"+ result.getMsg());
         }
     }
 }

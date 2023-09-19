@@ -15,7 +15,7 @@ import java.math.BigDecimal;
 public class StrategyController {
 
     // 策略模式是一种行为型设计模式，它定义了一系列的算法，并将它们封装起来，使它们可以相互善换，而不影响客户端的便用。
-    // 策略模式的主要角色有三个：环境类（Context），抽索策略类（Strategy）机具体策略类（ConcreteStrategy）。
+    // 策略模式的主要角色有三个：环境类（Context），抽索策略类（Strategy）及 具体策略类（ConcreteStrategy）。
     // 环境类持有一个策略矿象的引用，那根据不同的情况迷择不同的袋略执行。
     // 抽象策略类定义了一个公共的接口，用于封装不同的算法。具体策略类实现了抽象策略类的接口，并提供具体的算法实现。
 

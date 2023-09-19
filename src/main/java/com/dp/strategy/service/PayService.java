@@ -28,7 +28,7 @@ public class PayService {
     public String pay(BigDecimal amount, String type) {
         // 根据支付方式获取对应的策略对象
         PayStrategy strategy = strategyConfig.getInstanceByType(type);
-        PayContext payUtil = new PayContext(strategy);
-        return payUtil.pay(amount);
+        PayContext payContext = new PayContext(strategy);
+        return payContext.pay(amount);
     }
 }

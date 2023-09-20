@@ -20,5 +20,6 @@
 五、策略模式（com.dp.strategy）
     通过策略模式实现三方支付功能（WECHAT-微信 ALIPAY-支付宝 UNIONPAY-銀联 PAYPAL-PayPal），将它们封装起来，而不影响客户端的使用。
     
-
+六、适配器模式（com.dp.delegate）
+    通过适配器模式实现三方支付，支付宝、微信、银联支付等。
 

@@ -11,7 +11,7 @@ import java.math.BigDecimal;
  * @date 2023/9/17 15:15
  * @author caozp
  */
-@Service
+@Service("PAYPAL")
 public class PayPalStrategy implements PayStrategy {
     @Override
     public String pay(BigDecimal amount) {
